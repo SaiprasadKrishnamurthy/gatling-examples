@@ -41,7 +41,7 @@
             mvn -Dgatling.simulation.name=HttpSimulation3 gatling:execute
         -->
         <gatling.simulations.package>se.ivankrizsan.gatling.simulations</gatling.simulations.package>
-        <gatling.simulation.name>HttpSimulation1</gatling.simulation.name>
+        <gatling.simulation.name>SaiTest</gatling.simulation.name>
     </properties>
 
     <dependencies>
