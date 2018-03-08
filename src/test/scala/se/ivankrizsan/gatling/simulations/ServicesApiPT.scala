@@ -5,7 +5,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class SaiTest extends Simulation {
+class ServicesApiPT extends Simulation {
   private val baseUrl = "https://jsonplaceholder.typicode.com"
   private val basicAuthHeader = "Basic YmxhemU6UTF3MmUzcjQ="
   private val authPass = "Q1w2e3r4"
@@ -35,12 +35,17 @@ class SaiTest extends Simulation {
   val headers_0 = Map("Expect" -> "100-continue")
 
   val scn: ScenarioBuilder = scenario("RecordedSimulation")
-    .exec(http("ListOfServicesApi")
+    .exec(http("ServiceEndpoint1")
       .get(endpoint)
       .headers(headers_0)
       //.basicAuth(authUser, authPass)
       .check(status.is(200)))
-    .exec(http("ListOfMessages")
+    .exec(http("ServiceEndpoint2")
+      .get(endpoint)
+      .headers(headers_0)
+      //.basicAuth(authUser, authPass)
+      .check(status.is(200)))
+    .exec(http("ServiceEndpoint3")
       .get(endpoint)
       .headers(headers_0)
       //.basicAuth(authUser, authPass)

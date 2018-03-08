@@ -41,7 +41,8 @@
             mvn -Dgatling.simulation.name=HttpSimulation3 gatling:execute
         -->
         <gatling.simulations.package>se.ivankrizsan.gatling.simulations</gatling.simulations.package>
-        <gatling.simulation.name>SaiTest</gatling.simulation.name>
+
+        <!--<gatling.simulation.name>SaiTest</gatling.simulation.name>-->
     </properties>
 
     <dependencies>
@@ -73,7 +74,7 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>${gatling-plugin.version}</version>
                 <configuration>
-                    <simulationClass>${gatling.simulations.package}.${gatling.simulation.name}</simulationClass>
+                    <runMultipleSimulations>true</runMultipleSimulations>
                 </configuration>
             </plugin>
         </plugins>
